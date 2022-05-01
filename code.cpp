@@ -153,11 +153,14 @@ int main()
 	file.open("information.txt", std::fstream::in);
 	file_out.open("information_out.txt");
 	while (true) {
-		std::cout << "Read information from file or no? \t1 - yes \tany other digit - no   ";
+		std::cout << "Read information from file or no? \t1 - yes \t2 - no   ";
 		std::cin >> choose_action;
 		if (std::cin.fail()) {
 			std::cin.clear();
 			std::cin.ignore(32767, '\n');
+		}
+		if (choose_action < 1 || choose_action > 2) {
+			continue;
 		}
 		else {
 			break;
