@@ -16,8 +16,7 @@ struct Node {
 };
 Node* tree = nullptr;
 
-void push(std::string destination_place, int flight_number, std::string surname, std::string initials, int* departure_date, Node** tree)
-{
+void push(std::string destination_place, int flight_number, std::string surname, std::string initials, int* departure_date, Node** tree) {
 	if ((*tree) == nullptr) {
 		(*tree) = new Node;
 		(*tree)->destination_place = destination_place;
@@ -41,13 +40,11 @@ void push(std::string destination_place, int flight_number, std::string surname,
 	}
 }
 
-void print(Node* tree, int size)
-{
+void print(Node* tree, int size) {
 	if (tree == nullptr) {
 		return;
 	}
-	else
-	{
+	else {
 		print(tree->left, ++size);
 		for (int i = 0; i < size; ++i) {
 			std::cout << '|';
@@ -135,8 +132,7 @@ void read_from_file(Node*& tree) {
 	}
 }
 
-void add_to_file(Node* tree)
-{
+void add_to_file(Node* tree) {
 	if (tree == nullptr) {
 		return;
 	}
@@ -147,8 +143,7 @@ void add_to_file(Node* tree)
 	add_to_file(tree->right);
 }
 
-int main()
-{
+int main() {
 	int choose_action = 0;
 	file.open("information.txt", std::fstream::in);
 	file_out.open("information_out.txt");
