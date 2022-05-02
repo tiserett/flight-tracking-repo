@@ -223,24 +223,24 @@ int main() {
 		}
 		else if (choose_action == 2) {
 			if (tree == nullptr) {
-				std::cout << "\n\nthere are no flights in our list" << std::endl;
+				std::cout << "\n\nThere are no flights in our list" << std::endl;
 			}
 			else {
-				std::cout << "\n\nprinting flights\n";
+				std::cout << "\n\nPrinting flights\n";
 				print(&(*tree), 0);
 			}
 		}
 		else if (choose_action == 3) {
 
 			if (tree == nullptr) {
-				std::cout << "\n\nthere are no flights in our list" << std::endl;
+				std::cout << "\n\ntTere are no flights in our list" << std::endl;
 			}
 			else {
 				std::cout << "\n\nEnter flight_number you want to delete: ";
 				int flight_number;
 				std::cin >> flight_number;
 				if (tree->flight_number == flight_number) {
-					std::cout << "you can't delete root" << std::endl;
+					std::cout << "You can't delete root" << std::endl;
 					continue;
 				}
 				delete_element(tree, flight_number);
@@ -248,15 +248,15 @@ int main() {
 		}
 		else if (choose_action == 4) {
 			if (tree == nullptr) {
-				std::cout << "\n\nthere are no flights in our list" << std::endl;
+				std::cout << "\n\nThere are no flights in our list" << std::endl;
 			}
 			else {
-				std::cout << "\n\nenter flight number: ";
+				std::cout << "\n\nEnter flight number: ";
 				int flight_number;
 				std::cin >> flight_number;
 				find_element(tree, flight_number);
 				if (tree->flight_number == flight_number) {
-					std::cout << "you can't delete root";
+					std::cout << "You can't delete root";
 					continue;
 				}
 				delete_element(tree, flight_number);
