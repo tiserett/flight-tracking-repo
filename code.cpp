@@ -144,11 +144,13 @@ void add_to_file(Node* tree) {
 }
 
 int main() {
+	std::cout << "\t\t\t\t\t---FLIGHT TRACKING PROGRAM---" << std::endl;
 	int choose_action = 0;
 	file.open("information.txt", std::fstream::in);
 	file_out.open("information_out.txt");
 	while (true) {
-		std::cout << "Read information from file or no? \t1 - yes \t2 - no   ";
+		std::cout << "Read information from file or no? \t1 - yes \t2 - no" << std::endl;
+		std::cout << "Choose action: ";
 		std::cin >> choose_action;
 		if (std::cin.fail()) {
 			std::cin.clear();
@@ -162,14 +164,20 @@ int main() {
 		}
 	}
 	if (choose_action == 1) {
-		std::cout << "reading from file";
+		std::cout << "Reading from file";
 		read_from_file(tree);
 	}
+	else {
+		std::cout << "Not reading from file";
+	}
+	std::cout << std::endl;
 
 	do {
 		std::cin.ignore(32767, '\n');
-		std::cout << "\n\n\nList of available functions\nChoose action\n1)Add flight\n2)Print all flights\n3)Delete element\n4)Find and delete\n5)Close program\n\n";
+		std::cout << "\n\nList of available functions\nChoose action\n1)Add flight\n2)Print all flights\n3)Delete element\n4)Find and delete\n5)Close program";
+		std::cout << "\n\nChoose action: ";
 		std::cin >> choose_action;
+
 		if (choose_action == 1) {
 			std::string destination_place;
 			int flight_number;
@@ -177,7 +185,7 @@ int main() {
 			std::string initials;
 			int departure_date[3];
 
-			std::cout << "\n\n\nEnter destination place: ";
+			std::cout << "\n\nEnter destination place: ";
 			std::cin >> destination_place;
 			std::cin.clear();
 			std::cin.ignore(32767, '\n');
@@ -215,24 +223,24 @@ int main() {
 		}
 		else if (choose_action == 2) {
 			if (tree == nullptr) {
-				std::cout << "there are no flights in our list";
+				std::cout << "\n\nthere are no flights in our list" << std::endl;
 			}
 			else {
-				std::cout << "printing flights\n";
+				std::cout << "\n\nprinting flights\n";
 				print(&(*tree), 0);
 			}
 		}
 		else if (choose_action == 3) {
 
 			if (tree == nullptr) {
-				std::cout << "there are no flights in our list";
+				std::cout << "\n\nthere are no flights in our list" << std::endl;
 			}
 			else {
-				std::cout << "Enter flight_number you want to delete: ";
+				std::cout << "\n\nEnter flight_number you want to delete: ";
 				int flight_number;
 				std::cin >> flight_number;
 				if (tree->flight_number == flight_number) {
-					std::cout << "you can't delete root";
+					std::cout << "you can't delete root" << std::endl;
 					continue;
 				}
 				delete_element(tree, flight_number);
@@ -240,10 +248,10 @@ int main() {
 		}
 		else if (choose_action == 4) {
 			if (tree == nullptr) {
-				std::cout << "there are no flights in our list";
+				std::cout << "\n\nthere are no flights in our list" << std::endl;
 			}
 			else {
-				std::cout << "enter flight number: ";
+				std::cout << "\n\nenter flight number: ";
 				int flight_number;
 				std::cin >> flight_number;
 				find_element(tree, flight_number);
