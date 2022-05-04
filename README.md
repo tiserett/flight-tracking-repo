@@ -12,3 +12,7 @@ Delete flight from our structure by it's number.
 Get info about flight by it's number, and then delete it from our structure.
 
 Everything is pretty simple, if you ever find it useful, feel free to use it all.
+
+
+
+{This text in curly braces was made only to earn experience in working with different branches}
