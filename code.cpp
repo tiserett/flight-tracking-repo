@@ -233,7 +233,7 @@ int main() {
 		else if (choose_action == 3) {
 
 			if (tree == nullptr) {
-				std::cout << "\n\ntTere are no flights in our list" << std::endl;
+				std::cout << "\n\nThere are no flights in our list" << std::endl;
 			}
 			else {
 				std::cout << "\n\nEnter flight_number you want to delete: ";
